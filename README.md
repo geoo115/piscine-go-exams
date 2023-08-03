@@ -1,1 +1,1 @@
-# checkpoint-piscine-go
+# Exams && checkpoint-piscine-go
