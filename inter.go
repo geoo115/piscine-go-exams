@@ -6,6 +6,15 @@ import (
 	"github.com/01-edu/z01"
 )
 
+func isNotDuplicate(char rune, str string) bool {
+	for _, c := range str {
+		if char == c {
+			return false
+		}
+	}
+	return true
+}
+
 func main() {
 	if len(os.Args) != 3 {
 		return
@@ -16,10 +25,12 @@ func main() {
 	var result string
 
 	for _, char := range a {
-		for _, bChar := range b {
-			if char == bChar {
-				result += string(char)
-				break
+		if isNotDuplicate(char, result) {
+			for _, bChar := range b {
+				if char == bChar {
+					result += string(char)
+					break
+				}
 			}
 		}
 	}
