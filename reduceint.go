@@ -1,5 +1,11 @@
 package piscine
 
+import (
+	"strconv"
+
+	"github.com/01-edu/z01"
+)
+
 func ReduceInt(a []int, f func(int, int) int) {
 	var result int
 	for i := 0; i < len(a)-1; i++ {
