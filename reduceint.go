@@ -17,4 +17,5 @@ func ReduceInt(a []int, f func(int, int) int) {
 	for _, char := range strconv.Itoa(result) {
 		z01.PrintRune(rune(char))
 	}
+	z01.PrintRune('\n)
 }
