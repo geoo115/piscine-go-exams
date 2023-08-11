@@ -10,14 +10,26 @@ func main() {
 	if len(os.Args) != 2 {
 		return
 	}
-	input := os.Args[1]
-	lastSpace := len(input) - 1
 
-	for lastSpace >= 0 && input[lastSpace] != ' ' {
-		lastSpace--
+	input := os.Args[1]
+	lastspace := len(input) - 1
+
+	// Move backward to find the start of the last word
+	for lastspace >= 0 && input[lastspace] == ' ' {
+		lastspace--
 	}
-	for i := lastSpace + 1; i < len(input); i++ {
-		z01.PrintRune(rune(input[i]))
+	end := lastspace
+
+	// Move backward to find the end of the last word
+	for lastspace >= 0 && input[lastspace] != ' ' {
+		lastspace--
 	}
-	z01.PrintRune('\n')
+
+	// Print the last word
+	if lastspace >= 0 {
+		for i := lastspace + 1; i <= end; i++ {
+			z01.PrintRune(rune(input[i]))
+		}
+		z01.PrintRune('\n')
+	}
 }
