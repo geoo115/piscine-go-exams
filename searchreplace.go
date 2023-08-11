@@ -17,11 +17,8 @@ func main() {
 	for _, ch := range a {
 		if ch == rune(b[0]) {
 			ch = rune(c[0])
-			result += string(ch)
-		} else {
-			result += string(ch)
 		}
-
+		result += string(ch)
 	}
 	for _, r := range result {
 		z01.PrintRune(r)
