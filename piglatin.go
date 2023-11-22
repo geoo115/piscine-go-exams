@@ -17,9 +17,6 @@ func isVowel(char rune) bool {
 }
 
 func pigLatin(s string) string {
-	if len(s) == 0 {
-		return "No vowels"
-	}
 
 	if isVowel(rune(s[0])) {
 		return s + "ay"
@@ -42,6 +39,9 @@ func pigLatin(s string) string {
 
 func main() {
 	if len(os.Args) != 2 {
+		return
+	}
+		if len(os.Args[1]) == 0 {
 		return
 	}
 
