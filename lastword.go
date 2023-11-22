@@ -18,6 +18,9 @@ func main() {
 	for lastspace >= 0 && input[lastspace] == ' ' {
 		lastspace--
 	}
+	if lastSpace < 0 {
+		return
+	}
 	end := lastspace
 
 	// Move backward to find the end of the last word
